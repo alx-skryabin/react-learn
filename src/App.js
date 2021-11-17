@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import TodoList from './Todo/TodoList'
 import Loader from './Loader'
+import Modal from './Modal/Modal'
 import Context from './context'
 
 // отложенная загрузка компонента, для оптимизации
@@ -60,6 +61,8 @@ function App() {
     <Context.Provider value={{removeTodo}}>
       <div className="wrapper">
         <h1>React Tutorial</h1>
+        <Modal/>
+
         <React.Suspense fallback={<p>Loading...</p>}>
           <AddTodo onCreate={addTodo}/>
         </React.Suspense>
